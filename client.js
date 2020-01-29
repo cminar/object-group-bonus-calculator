@@ -39,5 +39,31 @@ const employees = [
 
 // This is not a race. Everyone on your team should understand what is happening.
 // Ask questions when you don't.
+let bonusArray = [];
+function bonusCalc(array){
+  for( i=0; i<array.length; i++ ){
+    if(array.reviewRating <= 2){
+      bonusPercentage = 0;
+      totalBonus = 0;
+      totalCompensation = array.annualSalary;
+    }else if(array.reviewRating = 3){
+      bonusPercentage = 4;
+      totalBonus = array.annualSalary * 0.04;
+      totalCompensation = array.annualSalary + totalBonus;
+    }else if(array.reviewRating = 4){
+      bonusPercentage = 6;
+      totalBonus = array.annualSalary * 0.06;
+      totalCompensation = array.annualSalary + totalBonus;
+    }else if(array.reviewRating = 5){
+      bonusPercentage = 10;
+      totalBonus = array.annualSalary * 0.1;
+      totalCompensation = array.annualSalary + totalBonus;
+    }else{
+      console.log('Stuck on else');
+    }
+    
+  }
+
+}
 
 console.log( employees );
