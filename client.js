@@ -42,32 +42,32 @@ const employees = [
 let bonusArray = [];
 function bonusCalc(array){
   for( i=0; i<array.length; i++ ){
-    if(array.reviewRating <= 2){
+    if(array[i].reviewRating <= 2){
       bonusPercentage = 0;
       totalBonus = 0;
-      totalCompensation = array.annualSalary;
-    }else if(array.reviewRating = 3){
+      totalCompensation = array[i].annualSalary;
+    }else if(array[i].reviewRating = 3){
       bonusPercentage = 4;
-      totalBonus = Number(array.annualSalary * (bonusPercentage * 0.01));
-      totalCompensation = Number(array.annualSalary + totalBonus);
-    }else if(array.reviewRating = 4){
+      totalBonus = (array[i].annualSalary * (bonusPercentage * 0.01));
+      totalCompensation = (Number(array[i].annualSalary) + Number(totalBonus));
+    }else if(array[i].reviewRating = 4){
       bonusPercentage = 6;
-      totalBonus = Number(array.annualSalary * (bonusPercentage * 0.01));
-      totalCompensation = Number(array.annualSalary + totalBonus);
-    }else if(array.reviewRating = 5){
+      totalBonus = (Number(array[i].annualSalary) * (Number(bonusPercentage * 0.01)));
+      totalCompensation = (Number(array[i].annualSalary) + Number(totalBonus));
+    }else if(array[i].reviewRating = 5){
       bonusPercentage = 10;
-      totalBonus = Number(array.annualSalary * (bonusPercentage * 0.01));
-      totalCompensation = Number(array.annualSalary + totalBonus);
+      totalBonus = (Number(array[i].annualSalary) * (Number(bonusPercentage * 0.01)));
+      totalCompensation = (Number(array[i].annualSalary) + Number(totalBonus));
     }else{
       console.log('Stuck on else');
     }
 
-    let numLength = (array.employeeNumber + '').length;
+    let numLength = (array[i].employeeNumber + '').length;
     if(numLength == 4){
       bonusPercentage += 5;
     }
 
-    if(array.annualSalary > 65000){
+    if(array[i].annualSalary > 65000){
       bonusPercentage -= 1;
     }
 
@@ -80,7 +80,7 @@ function bonusCalc(array){
     }
 
     let tempObj = {
-      name: array.name,
+      name: array[i].name,
       bonusPercentage: bonusPercentage,
       totalCompensation: totalCompensation,
       totalBonus: totalBonus
