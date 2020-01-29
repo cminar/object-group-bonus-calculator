@@ -48,20 +48,37 @@ function bonusCalc(array){
       totalCompensation = array.annualSalary;
     }else if(array.reviewRating = 3){
       bonusPercentage = 4;
-      totalBonus = array.annualSalary * 0.04;
+      totalBonus = array.annualSalary * (bonusPercentage * 0.01);
       totalCompensation = array.annualSalary + totalBonus;
     }else if(array.reviewRating = 4){
       bonusPercentage = 6;
-      totalBonus = array.annualSalary * 0.06;
+      totalBonus = array.annualSalary * (bonusPercentage * 0.01);
       totalCompensation = array.annualSalary + totalBonus;
     }else if(array.reviewRating = 5){
       bonusPercentage = 10;
-      totalBonus = array.annualSalary * 0.1;
+      totalBonus = array.annualSalary * (bonusPercentage * 0.01);
       totalCompensation = array.annualSalary + totalBonus;
     }else{
       console.log('Stuck on else');
     }
-    
+
+
+    if(employeeNumber.length == 4){
+      bonusPercentage += 5;
+    }
+
+    if(array.annualSalary > 65000){
+      bonusPercentage -= 1;
+    }
+
+    if(bonusPercentage > 13){
+      bonusPercentage = 13;
+    }
+
+    if(bonusPercentage < 0){
+      bonusPercentage = 0;
+    }
+
   }
 
 }
