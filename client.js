@@ -45,10 +45,10 @@ function bonusCalc(array){
     if(array[i].reviewRating <= 2){
       bonusPercentage = 0;
       totalBonus = 0;
-      totalCompensation = array[i].annualSalary;
+      totalCompensation = Number(array[i].annualSalary);
     }else if(array[i].reviewRating = 3){
       bonusPercentage = 4;
-      totalBonus = (array[i].annualSalary * (bonusPercentage * 0.01));
+      totalBonus = (Number(array[i].annualSalary) * (Number(bonusPercentage * 0.01)));
       totalCompensation = (Number(array[i].annualSalary) + Number(totalBonus));
     }else if(array[i].reviewRating = 4){
       bonusPercentage = 6;
