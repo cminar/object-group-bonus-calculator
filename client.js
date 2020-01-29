@@ -48,22 +48,22 @@ function bonusCalc(array){
       totalCompensation = array.annualSalary;
     }else if(array.reviewRating = 3){
       bonusPercentage = 4;
-      totalBonus = array.annualSalary * (bonusPercentage * 0.01);
-      totalCompensation = array.annualSalary + totalBonus;
+      totalBonus = Number(array.annualSalary * (bonusPercentage * 0.01));
+      totalCompensation = Number(array.annualSalary + totalBonus);
     }else if(array.reviewRating = 4){
       bonusPercentage = 6;
-      totalBonus = array.annualSalary * (bonusPercentage * 0.01);
-      totalCompensation = array.annualSalary + totalBonus;
+      totalBonus = Number(array.annualSalary * (bonusPercentage * 0.01));
+      totalCompensation = Number(array.annualSalary + totalBonus);
     }else if(array.reviewRating = 5){
       bonusPercentage = 10;
-      totalBonus = array.annualSalary * (bonusPercentage * 0.01);
-      totalCompensation = array.annualSalary + totalBonus;
+      totalBonus = Number(array.annualSalary * (bonusPercentage * 0.01));
+      totalCompensation = Number(array.annualSalary + totalBonus);
     }else{
       console.log('Stuck on else');
     }
 
-
-    if(employeeNumber.length == 4){
+    let numLength = (array.employeeNumber + '').length;
+    if(numLength == 4){
       bonusPercentage += 5;
     }
 
@@ -73,14 +73,23 @@ function bonusCalc(array){
 
     if(bonusPercentage > 13){
       bonusPercentage = 13;
-    }
+    } 
 
     if(bonusPercentage < 0){
       bonusPercentage = 0;
     }
 
+    let tempObj = {
+      name: array.name,
+      bonusPercentage: bonusPercentage,
+      totalCompensation: totalCompensation,
+      totalBonus: totalBonus
+    }
+    bonusArray.push(tempObj);
   }
 
 }
 
+bonusCalc( employees );
 console.log( employees );
+console.log( bonusArray);
